@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GUIStarter",
+            "request": "launch",
+            "mainClass": "Que1.GUIStarter",
+            "projectName": "QueA1"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

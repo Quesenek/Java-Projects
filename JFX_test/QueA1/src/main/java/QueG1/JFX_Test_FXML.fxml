@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QueG1.controller.viewController">
+  <children>
+      <AnchorPane prefHeight="401.0" prefWidth="640.0" style="-fx-background-color: rgb(50, 50, 50);">
+         <children>
+            <Accordion layoutX="14.0" layoutY="14.0" prefHeight="370.0" prefWidth="215.0" style="-fx-background-color: rgb(50, 50, 50); -fx-border-color: rgb(50, 50, 50);">
+              <panes>
+                <TitledPane animated="false" prefHeight="323.0" prefWidth="129.0" style="-fx-background-color: rgb(50, 50, 50); -fx-border-color: rgb(50, 50, 50);" text="Pokemon">
+                     <content>
+                        <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(50, 50, 50);" />
+                     </content>
+                     <effect>
+                        <Lighting diffuseConstant="1.65" specularConstant="0.23" specularExponent="26.51" surfaceScale="2.55">
+                           <bumpInput>
+                              <Shadow blurType="GAUSSIAN" />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </TitledPane>
+                  <TitledPane animated="false" style="-fx-background-color: rgb(50, 50, 50); -fx-border-color: rgb(50, 50, 50);" text="Search Pokemon">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="306.0" prefWidth="213.0" style="-fx-background-color: rgb(50, 50, 50); -fx-border-color: rgb(50, 50, 50);">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" style="-fx-text-fill: white;" text="Search Pokemon by Name or ID" />
+                              <TextField fx:id="pokemonSearch" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="166.0" />
+                              <Label fx:id="errorLbl" layoutX="14.0" layoutY="56.0" style="-fx-text-fill: white;" text="Error" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <effect>
+                        <Lighting diffuseConstant="1.49" specularConstant="0.0" specularExponent="19.07" surfaceScale="1.38">
+                           <bumpInput>
+                              <Shadow blurType="GAUSSIAN" radius="10.7425" width="23.97">
+                                 <color>
+                                    <Color red="0.0833333358168602" green="1.0" />
+                                 </color>
+                              </Shadow>
+                           </bumpInput>
+                           <light>
+                              <Light.Distant azimuth="57.56" elevation="40.81" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <ImageView fx:id="pokemonMImageView" fitHeight="150.0" fitWidth="200.0" layoutX="229.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="pokemonFImageView" fitHeight="150.0" fitWidth="200.0" layoutX="429.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+  </children>
+</VBox>
